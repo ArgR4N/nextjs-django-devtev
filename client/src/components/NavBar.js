@@ -10,7 +10,7 @@ export default function NavBar({setLogInModalOn}){
     
     return(
 
-        <nav className="shadow-lg flex flex-row items-center w-screen px-1 h-14 justify-around text-slate-900">
+        <nav className="fixed bg-white shadow-lg flex flex-row items-center w-screen px-1 h-14 justify-around text-slate-900">
             <BtnHome w="20" h="20" />            
             <section className="bg-slate-100 h-11 px-5 rounded-3xl w-4/5 flex flex-row gap-3 text-slate-500 items-center justify-between">  
                 <BtnSearch w="19" h="19" />

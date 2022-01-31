@@ -30,7 +30,7 @@ function BtnSignIn({ w, h }) {
 }
 
 //LogIn Button
-function BtnLogIn({ w, h, setLogInModalOn}) {
+function BtnLogIn({ w, h, setLogInModalOn }) {
   const iconLogIn = (_) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -50,13 +50,13 @@ function BtnLogIn({ w, h, setLogInModalOn}) {
     </svg>
   );
   return (
-      <button
-        onClick={_ => setLogInModalOn(true)}
-        className="justify-center hover:bg-slate-200 h-11 px-2 rounded-3xl gap-1 flex items-center w-fit h-full flex-row">
-
-        <p> Log In </p>
-        {iconLogIn()}
-      </button>
+    <button
+      onClick={(_) => setLogInModalOn(true)}
+      className="justify-center hover:bg-slate-200 h-11 px-2 rounded-3xl gap-1 flex items-center w-fit h-full flex-row"
+    >
+      <p> Log In </p>
+      {iconLogIn()}
+    </button>
   );
 }
 
@@ -84,7 +84,10 @@ function BtnSearch({ w, h }) {
 //Go To Home Button
 function BtnHome({ h, w }) {
   const handleClick = (_) => {
-    alert("home sweet home");
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   const iconHome = (_) => (
@@ -108,8 +111,8 @@ function BtnHome({ h, w }) {
 
   return (
     <button
-      className="hover:bg-slate-200 ease-in duration-100 bg-transparent h-11 rounded-3xl px-3 gap-1 flex items-center w-fit h-full flex-row"
       onClick={handleClick}
+      className="hover:bg-slate-200 ease-in duration-100 bg-transparent h-11 rounded-3xl px-3 gap-1 flex items-center w-fit h-full flex-row"
     >
       {iconHome()}
     </button>

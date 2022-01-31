@@ -13,7 +13,7 @@ export default function Home() {
     return ( 
         <main className="overflow-hidden">
             <NavBar setLogInModalOn={setLogInModalOn}/>
-            
+           
             <PostSection/>
             
             <LogInModal setLogInModalOn={setLogInModalOn} logInModalOn={logInModalOn} />
