@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function PostCol({ posts }) {
   return (
-    <ul className="w-full h-fit py-3  flex flex-wrap flew-row ">
-      {posts.map((post) => (
-        <li className="overflow-hidden min-w-1/5 h-fit">
+    <ul style={{width:'252px', minWidth:'252px', maxWidth:'252'}} className="h-fit mt-5 flex flex-nowrap flex-col items-center">
+      {posts.map((post, i) => (
+        <li style={{width:'252px', minWidth:'252px'}} key={i} className="px-1 mb-1 overflow-hidden h-fit">
           <Link href={`/post/${post.text}`}>
             <section >
               <div className="w-full h-full inset-0 bg-gray-200"></div>

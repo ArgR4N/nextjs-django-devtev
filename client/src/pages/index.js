@@ -1,6 +1,6 @@
 //Components
 import NavBar from "../components/NavBar.js"
-import PostSection from "../components/PostSection.js"
+import PostsSection from "../components/PostsSection.js"
 import LogInModal from "../components/LogInModal.js"
 
 //React Exports
@@ -14,7 +14,7 @@ export default function Home() {
         <main className="overflow-hidden">
             <NavBar setLogInModalOn={setLogInModalOn}/>
            
-            <PostSection/>
+            <PostsSection/>
             
             <LogInModal setLogInModalOn={setLogInModalOn} logInModalOn={logInModalOn} />
         </main>
