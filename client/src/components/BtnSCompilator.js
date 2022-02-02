@@ -1,5 +1,33 @@
 import Link from "next/link";
 
+//Add Ping Button
+function BtnAddPing({setModalsState}) {
+  const handleClick = (_) => {
+        setModalsState(p => ({...p, pingModalState:!p.pingModalState}))
+
+  };
+  const IconAddPing = (_) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      fill="currentColor"
+      className="bi bi-plus"
+      viewBox="0 0 16 16"
+    >
+      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+    </svg>
+  );
+  return (
+
+    <button className=" rounded-3xl w-fit h-fit bg-white fixed bottom-5 right-5  hover:scale-110 ease-out duration-200 hover:bg-slate-200 shadow-md"onClick={handleClick}>
+    
+      <IconAddPing />
+
+    </button>
+  );
+}
+
 //SignIn Button
 function BtnSignIn({ w, h }) {
   const handleClick = (_) => {
@@ -23,14 +51,14 @@ function BtnSignIn({ w, h }) {
       className="gap-1 flex items-center w-fit h-full flex-row"
       onClick={handleClick}
     >
-      {iconSignIn()}
+      <iconSignIn />
       <small> Sign in</small>
     </button>
   );
 }
 
 //LogIn Button
-function BtnLogIn({ w, h, setLogInModalOn }) {
+function BtnLogIn({ w, h, setModalsState}) {
   const iconLogIn = (_) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +79,7 @@ function BtnLogIn({ w, h, setLogInModalOn }) {
   );
   return (
     <button
-      onClick={(_) => setLogInModalOn(true)}
+      onClick={(_) => setModalsState(p =>({...p, logInModalState:true}))}
       className="justify-center hover:bg-slate-200 h-11 px-2 rounded-3xl gap-1 flex items-center w-fit h-full flex-row"
     >
       <p> Log In </p>
@@ -90,7 +118,7 @@ function BtnHome({ h, w }) {
     });
   };
 
-  const iconHome = (_) => (
+  const IconHome = (_) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width={w}
@@ -110,11 +138,11 @@ function BtnHome({ h, w }) {
   );
 
   return (
-    <button
+      <button
       onClick={handleClick}
       className="hover:bg-slate-200 ease-in duration-100 bg-transparent h-11 rounded-3xl px-3 gap-1 flex items-center w-fit h-full flex-row"
     >
-      {iconHome()}
+      <IconHome />
     </button>
   );
 }
@@ -127,4 +155,4 @@ function BtnUser() {
   return <button onClick={handleClick}>User</button>;
 }
 
-export { BtnSearch, BtnHome, BtnSignIn, BtnLogIn, BtnUser };
+export { BtnSearch, BtnHome, BtnSignIn, BtnLogIn, BtnUser, BtnAddPing };

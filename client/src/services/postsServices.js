@@ -15,4 +15,4 @@ export function disarmPostsArray(array, n) {
   return disarmedArray;
 }
 
-export function getColsNumber(width){ return Math.floor(width / 252) }
+export function getColsNumber(width){ return Math.floor(width / 352) }
