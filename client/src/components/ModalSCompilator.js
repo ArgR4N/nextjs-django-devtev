@@ -5,12 +5,12 @@ const ModalWrapper = ({ children, modalState, setModalsState }) => {
     if (e.target.classList[0] === "modal") {
       const createObj = (p) => {
         let newObj = new Object();
-        for(let k in p) {
+        for (let k in p) {
           newObj[k] = false;
         }
         return newObj;
       };
-      setModalsState((p) => ({...createObj(p)}));
+      setModalsState((p) => ({ ...createObj(p) }));
     }
   };
   return (
@@ -28,27 +28,41 @@ const ModalWrapper = ({ children, modalState, setModalsState }) => {
 function PingModal({ modalState, setModalsState }) {
   return (
     <ModalWrapper modalState={modalState} setModalsState={setModalsState}>
-      <form className="bg-white min-w-fit h-3/5 rounded-3xl overflow-hidden mt-16 flex">
-        <section className="flex w-fit items-center justify-center p-4">
-          <input type="file" />
-        </section>
-
+      <form className="bg-slate-50 min-w-fit h-3/5 rounded-3xl overflow-hidden relative mt-16 flex">
         <section className="p-10 justify-evenly flex flex-col">
-          <input
-            className="text-slate-600 text-3xl border-b bg-slate-100 border-slate-200 pb-2 pt-1 px-1 focus-active:border-slate-400 outline-none"
-            placeholder="Agrega un tituló"
-            type="text"
-          />
-          <textarea
-            rows="5"
-            className="outline-none text-slate-600 w-full rounded-md  text-xl p-1 bg-slate-100"
-            placeholder="Una descripcion..."
-          />
-          <input
-            className="text-slate-800 px-3 min-w-fit hover:text-slate-500 bg-green-200 cursor-pointer hover:bg-green-100 text-md w-1/5 h-10 rounded-lg"
-            value="Crear ping!"
-            type="submit"
-          />
+          <div className="border-2 text-3xl border-slate-400 focus-within:border-slate-500  w-full focus-within:bg-slate-200 ease-out duration-200 text-slate-500 flex items-center gap-2 p-1 pl-2 rounded-sm">
+            <Icon.Award />
+            <input
+              className="outline-none bg-transparent pb-0.5"
+              placeholder="Agrega un tituló"
+              type="text"
+            />
+          </div>
+          <div className="flex text-xl border-2 border-slate-400 focus-within:border-slate-500  w-full focus-within:bg-slate-200 ease-out duration-200 text-slate-500 gap-2 rounded-sm items-baseline p-2">
+            <Icon.Book />
+            <textarea
+              rows="5"
+              className="outline-none bg-transparent w-full"
+              placeholder="Una descripcion..."
+            />
+          </div>
+
+          <div className="flex items-center text-xl border-2 border-slate-400 focus-within:border-slate-500  w-full focus-within:bg-slate-200 ease-out duration-200 text-slate-500 gap-2 rounded-sm pl-2 p-1">
+            <Icon.Hash />
+            <input list="categorys" className="bg-transparent w-full outline-none" name="browser" id="browser" placeholder="Chose a category"/>
+            <datalist id="categorys" className="bg-transparent w-full" >
+              <option value="Snippet" />
+              <option value="Website" />
+              <option value="3d Model" />
+              <option value="Envieronment (.dot files?)" />
+              <option value="Image" />
+            </datalist>
+          </div>
+        </section>
+        <section className="absolute flex items-center justify-center top-0">
+          <btn>cerrar</btn>
+
+          <btn>pasar</btn>
         </section>
       </form>
     </ModalWrapper>
