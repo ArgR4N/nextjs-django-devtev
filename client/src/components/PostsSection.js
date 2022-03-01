@@ -1523,7 +1523,7 @@ export default function PostSection({posts}) {
   ];
 
   return (
-    <section className="mt-16 flex justify-center">
+    <section className="mt-16 gap-3 flex justify-center">
       {[...Array(cols).keys()].map((n, i) => (
         <PostsCol key={i} i={i} posts={disarmPostsArray(posts, cols)[n]} />
       ))}

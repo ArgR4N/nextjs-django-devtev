@@ -9,7 +9,7 @@ export default function PostCol({ posts, i }) {
 
 
     return (
-    <ul key={i} style={{width:'352px', minWidth:'352px', maxWidth:'352'}} className="h-fit mt-5 flex flex-nowrap flex-col items-center">
+    <ul key={i} style={{width:'352px', minWidth:'352px', maxWidth:'352'}} className="h-fit gap-3 mt-5 flex flex-nowrap flex-col items-center">
       {posts.map((post, i) => (
         <li key={i} className="px-1 mb-1 overflow-hidden h-fit w-full  hover:text-slate-500 ease-out duration-200">
             <section onClick={openPingModal}>

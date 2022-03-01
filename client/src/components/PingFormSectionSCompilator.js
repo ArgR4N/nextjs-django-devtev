@@ -19,6 +19,7 @@ function Init({className}) {
           placeholder="Una descripcion..."
         />
       </div>
+ {/*
 
       <div className="flex items-center text-xl border-2 border-slate-400 focus-within:border-slate-500  w-full focus-within:bg-slate-200 ease-out duration-200 text-slate-500 gap-2 rounded-sm pl-2 p-1">
         <Icon.Hash />
@@ -29,17 +30,31 @@ function Init({className}) {
           id="browser"
           placeholder="Chose a category"
         />
-        <datalist id="categorys" className="bg-transparent w-full">
+      <datalist id="categorys" className="bg-transparent w-full">
           <option value="Snippet" />
           <option value="Website" />
           <option value="3d Model" />
           <option value="Envieronment (.dot files?)" />
           <option value="Image" />
         </datalist>
-      </div>
-    </section>
+</div>
+     */}
+
+      </section>
   );
 }
 
+function SelectImage(){
+    return(
+        <section>
+        
+            <input type="image" />
+    
+        </section>
 
-export { Init };
+    )
+
+}
+
+
+export { Init, SelectImage };

@@ -57,8 +57,7 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const getRandomHeight = (_) =>
-    Math.floor(Math.random() * (750 - 250 + 1)) + 250;
+  const getRandomHeight = (_) => (Math.floor(Math.random() * (750 - 250 + 1)) + 250)
   let posts = [...Array(300).keys()].map(
     (_) => `https://picsum.photos/352/${getRandomHeight()}`
   );
