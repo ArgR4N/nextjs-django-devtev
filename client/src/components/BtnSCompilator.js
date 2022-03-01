@@ -1,10 +1,8 @@
-import Link from "next/link";
-
 //Add Ping Button
+import { setAllModalsOff } from "../services/modalsServices.js";
 function BtnAddPing({setModalsState}) {
-  const handleClick = (_) => {
-        setModalsState(p => ({...p, pingModalState:!p.pingModalState}))
-
+    const handleClick = (_) => {
+        setModalsState(p => ({...setAllModalsOff(p), pingFormModalState:true}))
   };
   const IconAddPing = (_) => (
     <svg
@@ -79,7 +77,7 @@ function BtnLogIn({ w, h, setModalsState}) {
   );
   return (
     <button
-      onClick={(_) => setModalsState(p =>({...p, logInModalState:true}))}
+      onClick={(_) => setModalsState(p =>({...setAllModalsOff(p), logInModalState:true}))}
       className="justify-center hover:bg-slate-200 h-11 px-2 rounded-3xl gap-1 flex items-center w-fit h-full flex-row"
     >
       <p> Log In </p>
@@ -100,13 +98,16 @@ function BtnSearch({ w, h }) {
       width={w}
       height={h}
       fill="currentColor"
-      viewBox="0 0 16 16"
+      viewBox="0 0 24 24"
     >
-      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+      <path d="M10 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6m13.12 2.88-4.26-4.26A9.842 9.842 0 0 0 20 10c0-5.52-4.48-10-10-10S0 4.48 0 10s4.48 10 10 10c1.67 0 3.24-.41 4.62-1.14l4.26 4.26a3 3 0 0 0 4.24 0 3 3 0 0 0 0-4.24" />
     </svg>
   );
 
-  return <button onClick={handleClick}>{iconSearch()}</button>;
+  return <button onClick={handleClick}>
+
+
+        {iconSearch()}</button>;
 }
 
 //Go To Home Button
